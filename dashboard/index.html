@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Launch Ledger — Token Radar</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<!-- 758 = 198 ranked + 416 already trading + 144 set aside -->
+<!-- Vaults family = Risk Curators + Onchain Capital Allocator + Yield + Yield Aggregator + Liquidity Manager + Leveraged Farming + Farm + Options Vault; Trading family = Dexs + Derivatives + Basis Trading + Prediction Market + OTC Marketplace; Lending family = Lending + CDP + CDP Manager + Collateral Management + Collateral Markets + Uncollateralized Lending + Interest Rate Derivatives; Real World &amp; Bitcoin family = RWA + Dual-Token Stablecoin + Stablecoin Wrapper + Anchor BTC + Decentralized BTC + Algo-Stables + Stablecoin Issuer + Reserve Currency; Chains &amp; Bridges family = Chain + Cross Chain Bridge + Bridge + Canonical Bridge; Staking family = Restaking + Staking Pool + Liquid Staking + Liquid Restaking + Restaked BTC; Funds &amp; Launch family = Indexes + Launchpad + Token Locker + Insurance + Governance Incentives; Payments family = Payments + Crypto Card Issuer + CeDeFi; Exchanges family = CEX; Other family = AI Agents + Decentralized AI + NFT Marketplace + Privacy + Options + Synthetics + DOR -->
+<!-- 198 = 40 watchlist + 158 early finds (138 below floor + 20 above floor) -->
+<header class="mast">
+  <div class="mast-in">
+    <div>
+      <h1>Launch Ledger</h1>
+      <p class="sub">Token launch radar &middot; DefiLlama snapshot <span id="asof"></span> &middot; 758 protocols scanned</p>
+    </div>
+    <div class="mast-badge" id="matchBadge">198/198 ranks and values match board.json</div>
+  </div>
+  <p class="recon" id="recon"></p>
+  <p class="recon2" id="recon2"></p>
+  <p class="formula" id="formula"></p>
+  <p class="verdict-strip" id="verdictStrip"></p>
+</header>
+<nav class="tabs" id="tabs"></nav>
+<section class="filters" id="filters">
+  <input id="fSearch" type="text" placeholder="Search name or slug" aria-label="Search">
+  <select id="fTier" aria-label="Tier">
+    <option value="">Tier: all</option>
+    <option value="0">Watchlist</option>
+    <option value="1">Early (below floor)</option>
+    <option value="2">Above floor</option>
+  </select>
+  <select id="fFam" aria-label="Family"></select>
+  <select id="fChain" aria-label="Chain"></select>
+  <select id="fMin" aria-label="Min TVL">
+    <option value="0">Min TVL: none</option>
+    <option value="10000000">Min TVL: $10M</option>
+    <option value="50000000">Min TVL: $50M</option>
+    <option value="100000000">Min TVL: $100M</option>
+    <option value="1000000000">Min TVL: $1B</option>
+  </select>
+  <select id="fChg" aria-label="7-day change">
+    <option value="">7d: all</option>
+    <option value="gain">7d gainers</option>
+    <option value="fall">7d falling</option>
+  </select>
+  <button id="fClear" type="button">Clear</button>
+</section>
+<div class="chips" id="chips"></div>
+<main id="view"></main>
+<footer class="foot">
+  <p>Implied values are this entry&rsquo;s model, not a prediction of whether or when a token is issued. A protocol &ldquo;records no token&rdquo; in DefiLlama&rsquo;s record; that is not proof it has none. No name is special-cased: the same formula scores every row. Farm steps are positioning, not a promise of an airdrop.</p>
+  <p id="footCounts"></p>
+</footer>
+<script src="../data.js"></script>
+<script src="farm.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
